@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'todolist';
+    src: url('./icomoon.eot') format('embedded-opentype'), url('./icomoon.svg') format('svg'), url('./icomoon.ttf') format('truetype'), url('./icomoon.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'true';
+    src: url('./true.eot') format('embedded-opentype'), url('./true.svg') format('svg'), url('./true.ttf') format('truetype'), url('./true.woff') format('woff');
+}
