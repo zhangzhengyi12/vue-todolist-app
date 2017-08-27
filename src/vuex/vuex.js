@@ -43,7 +43,8 @@ export default new VueX.Store({
                     date: saveDate.date,
                     color: ranColor.random(['blue', 'pink', 'green', 'yellow'])
                 })
-            }    
+            }
+            state.nowTodoListData = {}
         },
         openANote(state,index) {
             state.nowTodoListData = state.todoListData[index]
@@ -52,6 +53,8 @@ export default new VueX.Store({
             console.log(index);
             state.noteListData.splice(index, 1)
             state.todoListData.splice(index,1)
+        },
+        clearNowTodo(state) {
         }
     }
 })

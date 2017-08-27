@@ -106,6 +106,11 @@ export default {
     
   }
   },
+  beforeRouteEnter(to,from,next){
+      next(vm=>{
+          vm.todoListData = vm.$store.state.nowTodoListData
+      })
+  },
 //   computed:{
 //       todoListData(){
 //           console.log(this.$store.state);
@@ -213,5 +218,8 @@ export default {
     content: "\ea10"
 }
 
+#todolist{
+    width: 100%;
+}
 
 </style>

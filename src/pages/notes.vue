@@ -36,6 +36,12 @@ export default {
       model,
       note
   },
+  beforeRouteEnter(to,from,next){
+      next(vm=>{
+          vm.data = vm.$store.state.noteListData
+          console.log(vm.$store);
+      })
+  },
   data:function(){
       return{
           nowTopBarConfig:{
@@ -54,7 +60,7 @@ export default {
           ],
           isShowUplift:false,
           isShowModel:false,
-        
+          data:{}
       }
   },
   methods:{
@@ -83,9 +89,9 @@ export default {
       }
   },
   computed:{
-      data(){
-          return this.$store.state.noteListData
-      }
+    //   data(){
+    //       return this.$store.state.noteListData
+    //   }
   }
 }
 </script>

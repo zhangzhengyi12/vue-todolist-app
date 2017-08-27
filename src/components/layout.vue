@@ -85,7 +85,7 @@ body {
 
 .right-in-enter-active,.right-in-leave-active{
     will-change: transform;
-    transition: all 1s;
+    transition: all .5s;
     height: 100%;
     top: 0;
     position: absolute;
