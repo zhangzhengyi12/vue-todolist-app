@@ -10,9 +10,9 @@ tags: [vue,vuex,vue-router]
 
 话不多少，先上图！
 
-![](http://ot7z7wqqo.bkt.clouddn.com/TIM%E5%9B%BE%E7%89%8720170827234752.png)
+![](1.png)
 
-![](http://ot7z7wqqo.bkt.clouddn.com/TIM%E6%88%AA%E5%9B%BE20170827234655.png)
+![](2.png)
 
 
 # 技术栈 #
