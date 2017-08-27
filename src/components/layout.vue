@@ -1,9 +1,9 @@
 <template>
   <div id="app">
       <transition name="right-in">
-          <!-- <keep-alive> -->
+          <keep-alive>
           <router-view></router-view>
-          <!-- </keep-alive> -->
+          </keep-alive>
       </transition>
   </div>
 </template>
