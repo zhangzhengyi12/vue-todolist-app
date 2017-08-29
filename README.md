@@ -10,9 +10,9 @@ tags: [vue,vuex,vue-router]
 
 话不多少，先上图！
 
-![](1.png)
+![](http://ot7z7wqqo.bkt.clouddn.com/TIM%E5%9B%BE%E7%89%8720170827234752.png)
 
-![](2.png)
+![](http://ot7z7wqqo.bkt.clouddn.com/TIM%E6%88%AA%E5%9B%BE20170827234655.png)
 
 
 # 技术栈 #
@@ -27,11 +27,54 @@ tags: [vue,vuex,vue-router]
 
 vue-router我感觉非常适合这种切换的情况，比单组件切换的体验会更好一些，毕竟单纯组件做返回会非常麻烦，毕竟这是一个单页应用。单击返回的感觉真的很好。
 
+**在使用vue-router的时候有一个问题，就是keep-alive的组件他的数据是会缓存的，这样当你切换组件的时候，数据就无法重新获取，我的解决办法是利用router的钩子**
+
+```js
+
+beforeRouteEnter(to,from,next){
+      next(vm=>{
+          vm.todoListData = vm.$store.state.nowTodoListData
+      })
+  },
+
+```
+
+每当路由进去之间就尝试获取新数据
+
+
 ## vuex ##
 
 在我使用vue-router的时候出现一个棘手的问题，就是组件之间的通讯问题。在我这个应用之中，有着非常高频率的内部通讯。如果使用事件和props通讯，会出现非常大量的通讯路线，整个程序的复杂度会大大提高。
 
 但vue的作者早就想到了这个问题。所以我使用vuex来管理整个数据模型。我仅仅使用了60行的vuex配置就完成了所有的数据管理，并且这些操作都是在一个文件之中，非常方便查看与分析！
+
+## 本地存储 ##
+
+既然这是一个todoApp,那么本地存储就很有必要了，毕竟一旦刷新丢失数据是种非常难受的体验，所以我使用了h5的localstorageAPI进行本地存储，在vuex中添加了两组mutations
+
+```js
+
+localSave(state) {
+            let storage = window.localStorage
+            let data  = {
+                notes: state.noteListData,
+                todos:state.todoListData
+            }
+            storage.setItem("data",JSON.stringify(data))
+        },
+        localLoad(state) {
+            let storage = window.localStorage
+            let data = JSON.parse(storage.getItem("data"))
+            if (data) {
+                state.noteListData = data.notes;
+                state.todoListData = data.todos;
+            }
+        }
+
+
+```
+
+
 
 ## 开发总结 ##
 

@@ -55,6 +55,22 @@ export default new VueX.Store({
             state.todoListData.splice(index,1)
         },
         clearNowTodo(state) {
+        },
+        localSave(state) {
+            let storage = window.localStorage
+            let data  = {
+                notes: state.noteListData,
+                todos:state.todoListData
+            }
+            storage.setItem("data",JSON.stringify(data))
+        },
+        localLoad(state) {
+            let storage = window.localStorage
+            let data = JSON.parse(storage.getItem("data"))
+            if (data) {
+                state.noteListData = data.notes;
+                state.todoListData = data.todos;
+            }
         }
     }
 })

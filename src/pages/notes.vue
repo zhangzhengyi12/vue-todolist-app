@@ -86,6 +86,7 @@ export default {
       delNote(a){
           console.log(1);
           this.$store.commit("delANote",a)
+          this.$store.commit("localSave")
       }
   },
   computed:{

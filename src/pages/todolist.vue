@@ -93,6 +93,7 @@ export default {
           this.isShowDialog = true;
         //   TODO: save功能
         this.$store.commit('saveNowNote', this.todoListData)
+        this.$store.commit('localSave')
           setTimeout(()=>{
               this.isShowDialog = false
           },2000)

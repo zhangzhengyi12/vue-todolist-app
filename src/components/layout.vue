@@ -56,6 +56,9 @@ export default {
           this.isShowNotesPage = false
           this.isShowTodoListPage = true
       }
+  },
+  created:function(){
+      this.$store.commit("localLoad")
   }
 }
 </script>
