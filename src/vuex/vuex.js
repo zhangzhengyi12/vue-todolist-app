@@ -52,6 +52,9 @@ export default new VueX.Store({
             console.log(index);
             state.noteListData.splice(index, 1)
             state.todoListData.splice(index,1)
+        },
+        localSave(state) {
+            
         }
     }
 })
