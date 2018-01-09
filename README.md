@@ -86,6 +86,10 @@ localSave(state) {
 解决办法：修改项目config文件夹里index.js中的assetsPublicPath，默认是/，改成你想设置的子目录名称
 比如在改成./就能在当前目录下去查找资源文件。
 
+
+# 增加PWA #
+
+
 # 地址 #
 
 Demo地址：[https://github.com/zhangzhengyi12/vue-todolist-app/tree/master](https://github.com/zhangzhengyi12/vue-todolist-app/tree/master)

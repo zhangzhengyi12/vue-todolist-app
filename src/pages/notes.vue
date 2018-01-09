@@ -7,7 +7,7 @@
           <div class="topBarPlaceHolder"></div>
       <!-- note -->
 
-       <note v-for="(item,index) of data" :data="item" :index="index" @on-click="triggleToTodolist(index)" @on-click-del="delNote(index)"></note>
+       <note v-for="(item,index) of data" :data="item" key="index" :index="index" @on-click="triggleToTodolist(index)" @on-click-del="delNote(index)"></note>
 
       <!-- noteclose -->
       <my-button :name="btnAddStyle" @on-click="triggleSelectionBox"></my-button>

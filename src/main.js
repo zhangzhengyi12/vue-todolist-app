@@ -5,7 +5,8 @@ import layout from './components/layout.vue'
 import router from "./router/index"
 import fontIcon from "./assets/fonts/font-icon.css"
 import store from "./vuex/vuex.js"
-// import Vuex from "vuex"
+import * as OfflinePluginRuntime from 'offline-plugin/runtime';
+OfflinePluginRuntime.install();
 
 
 
@@ -17,6 +18,10 @@ new Vue({
   template: '<layout/>',
   components: { layout }
 })
+
+
+
+
 
 
 //设置触摸事件
